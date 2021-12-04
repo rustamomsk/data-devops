@@ -2,10 +2,10 @@
 > ssh rustam2@10.0.2.4
 
 #### 1) Используя команду ls, необходимо вывести на экран все файлы, которые расположены в секционных директориях /usr/share/man/manX и содержат слово "config" в имени.
-> ls -la man?.*config*
+> ls -la man?/\*config\* 
 
 ####  Одним вызовом ls найти все файлы, содержащие слово "system" в каталогах /usr/share/man/man1 и /usr/share/man/man7
-> ls -la man[1,7]/*system*
+> ls -la man[1,7]/\*system\*
 
 #### 2) Найти в директории /usr/share/man все файлы, которые содержат слово "help" в имени, найти там же все файлы, имя которых начинается на "conf".
 > find -name "*help*" && find -name "config*"
@@ -21,12 +21,15 @@
 
 #### 3) При помощи команд head и tail, выведите последние 2 строки файла /etc/fstab и первые 7 строк файла /etc/yum.conf  
 > tail -n2 fstab  
+
 ![image](https://user-images.githubusercontent.com/87946097/143655003-0afab91a-09ad-47dd-ad34-3df4988352f4.png)
 
 > head -n7 yum.conf  
+
 ![image](https://user-images.githubusercontent.com/87946097/143655622-e8c6ffb4-6c21-4653-be06-59f6d7f88b32.png)
 
-При попытке вывода большего количества строк, чем есть, будет выведен полный текст файла.  
+При попытке вывода большего количества строк, чем есть, будет выведен полный текст файла. 
+
 ![image](https://user-images.githubusercontent.com/87946097/143658165-c058ab58-0135-4411-b1f5-dcc07508aef4.png)
 
 #### 4) Создайте в домашней директории файлы file_name1.md, file_name2.md и file_name3.md. Используя {}, переименуйте:
